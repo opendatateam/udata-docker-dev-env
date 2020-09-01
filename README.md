@@ -6,16 +6,17 @@ Cloner le depot udata-docker-dev-env:
 
 Cloner les deux dépots au sein du dossier créé:
 
-`git clone git@github.com:opendatateam/udata.git`
-`git clone git@github.com:etalab/udata-gouvfr.git`
-
-Copier le fichier `udata.cfg`, le `Dockerfile` ainsi que le fichier `start.sh` dans le dossier udata.
+```
+git clone git@github.com:opendatateam/udata.git
+git clone git@github.com:etalab/udata-gouvfr.git
+```
 
 Au sein du dossier udata, lancer les commandes suivantes:
 
-`npm install`
-`npm run build`
-`npm run widgets:build`
+```
+npm install
+npm run build
+```
 
 Puis à la racine du dépot udata-docker-dev-env:
 
