@@ -16,6 +16,8 @@ Changer de branche dans le dépôt udata:
 ```
 cd udata
 git checkout remove-theme
+npm install
+npm run build
 ```
 
 Changer de branche dans le dépôt udata-gouvfr:
@@ -23,15 +25,6 @@ Changer de branche dans le dépôt udata-gouvfr:
 ```
 cd udata-gouvfr
 git checkout main-theme
-```
-
-Aller sein du dossier udata:
-
-`cd udata`
-
-Lancer les commandes suivantes:
-
-```
 npm install
 npm run build
 ```
