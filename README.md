@@ -22,10 +22,6 @@ npm install
 npm run build
 ```
 
-Remoter d'un niveau:
+Remontez au dossier parent et lancez docker:
 
-`cd ..`
-
-Puis à la racine du dépot udata-docker-dev-env:
-
-`docker-compose up`
+`cd .. & docker-compose up`
