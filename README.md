@@ -11,14 +11,21 @@ git clone git@github.com:opendatateam/udata.git
 git clone git@github.com:etalab/udata-gouvfr.git
 ```
 
-Au sein du dossier udata, lancer les commandes suivantes:
+Aller sein du dossier udata:
+
+`cd udata`
+
+Lancer les commandes suivantes:
 
 ```
 npm install
 npm run build
 ```
 
+Remoter d'un niveau:
+
+`cd ..`
+
 Puis à la racine du dépot udata-docker-dev-env:
 
 `docker-compose up`
-
