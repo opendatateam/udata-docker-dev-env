@@ -32,3 +32,44 @@ npm run build
 Remontez au dossier parent et lancez Docker Compose:
 
 `cd .. & docker-compose up`
+
+## Cache
+
+### Désactiver complètement le cache
+
+Dans `udata.cfg` :
+
+```
+CACHE_TYPE = 'null'
+```
+
+### Désactiver le cache de templates
+
+(A tester, pas sûr)
+
+```
+TEMPLATE_CACHE_DURATION = -1
+```
+
+### Vider le cache à la main
+
+```
+docker exec -it udata-docker-dev-env_udata_1 udata cache flush
+```
+
+## Contenu / utilisateurs
+
+### Créer un admin
+
+```
+docker exec -it udata-docker-dev-env_udata_1 udata user create
+docker exec -it udata-docker-dev-env_udata_1 udata user set-admin <email>
+```
+
+### Peupler la home
+
+- se logguer avec un admin
+- aller sur http://localhost:7000/fr/admin/editorial/
+- choisir des jeux de données et des réutilisations
+- aller sur la page d'une réutilisation en admin et cliquer sur "Mis en avant"
+- flusher le cache si besoin
