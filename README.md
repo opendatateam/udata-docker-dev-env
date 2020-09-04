@@ -73,3 +73,18 @@ docker exec -it udata-docker-dev-env_udata_1 udata user set-admin <email>
 - choisir des jeux de données et des réutilisations
 - aller sur la page d'une réutilisation en admin et cliquer sur "Mis en avant"
 - flusher le cache si besoin
+
+
+## Compiler les traductions
+
+### udata
+
+```
+docker exec -it udata-docker-dev-env_udata_1 "cd /srv/udata && inv i18nc"
+```
+
+### udata-gouvfr
+
+```
+docker exec -it udata-docker-dev-env_udata_1 "cd /srv/udata-gouvfr && inv i18nc"
+```
