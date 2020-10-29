@@ -99,9 +99,30 @@ docker-compose up
 ```
 
 2. Créer une ressource distante sur un jeu de données :
+
 - url : https://static.data.gouv.fr/resources/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/20201028-190138/donnees-hospitalieres-nouveaux-covid19-2020-10-28-19h00.csv
 - format : csv
 - mime : text/csv
 - taille : 1000
 
 3. La ressource devrait avoir un attribut `preview_url` rempli, c'est celui sur lequel se base la preview existante, par exemple avec `/tabular/preview/?url=https%3A%2F%2Fstatic.data.gouv.fr%2Fresources%2Fdonnees-hospitalieres-relatives-a-lepidemie-de-covid-19%2F20201028-190138%2Fdonnees-hospitalieres-nouveaux-covid19-2020-10-28-19h00.csv`
+
+## Couverture spatiale
+
+1. Récupérer et indexer le référentiel des zones géo
+
+```
+cd udata
+wget https://static.data.gouv.fr/resources/geozones/20190513-134502/geozones-france-2019-0-msgpack.tar.xz
+# penser à casser un oeuf sur son CPU à partir d'ici, oeuf au plat garanti
+# prévoir également un bon bouquin
+docker exec -it udata-docker-dev-env_udata_1 udata spatial load /srv/udata/geozones-france-2019-0-msgpack.tar.xz
+rm geozones-france-2019-0-msgpack.tar.xz
+docker exec -it udata-docker-dev-env_udata_1 udata search index Geozones
+```
+
+2. Ajouter une couverture spatiale sur un jeu de données
+
+- éditer un jeu de données dans l'admin
+- dans le champ couverture spatiale, taper "toulouse" par exemple et choisir une zone
+- sauvegarder
