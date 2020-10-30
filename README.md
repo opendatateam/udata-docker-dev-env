@@ -136,9 +136,11 @@ $ docker exec -it udata-docker-dev-env_udata_1 udata shell
 >>> from udata.models import Dataset
 >>> ds = Dataset.objects[:2]
 >>> ds[0].resources[0].extras['check:available'] = True
+>>> ds[0].resources[0].save()
 >>> ds[0].save()
 <Dataset: Namé reiciendisé incidunté quisé explicaboé eaqueé reiciendisé officiisé.>
 >>> ds[1].resources[0].extras['check:available'] = False
+>>> ds[1].resources[0].save()
 >>> ds[1].save()
 <Dataset: Accusantiumé minusé accusamusé veroé.>
 >>> ds[0].slug, ds[1].slug
