@@ -126,3 +126,25 @@ docker exec -it udata-docker-dev-env_udata_1 udata search index Geozones
 - éditer un jeu de données dans l'admin
 - dans le champ couverture spatiale, taper "toulouse" par exemple et choisir une zone
 - sauvegarder
+
+## Statut dispo / non dispo pour une ressource
+
+- Mettre une ressource dispo et une non dispo via le shell :
+
+```
+$ docker exec -it udata-docker-dev-env_udata_1 udata shell
+>>> from udata.models import Dataset
+>>> ds = Dataset.objects[:2]
+>>> ds[0].resources[0].extras['check:available'] = True
+>>> ds[0].save()
+<Dataset: Namé reiciendisé incidunté quisé explicaboé eaqueé reiciendisé officiisé.>
+>>> ds[1].resources[0].extras['check:available'] = False
+>>> ds[1].save()
+<Dataset: Accusantiumé minusé accusamusé veroé.>
+>>> ds[0].slug, ds[1].slug
+('name-reiciendise-incidunte-quise-explicaboe-eaquee-reiciendise-officiise', 'accusantiume-minuse-accusamuse-veroe')
+```
+
+- Les slugs permettent ensuite de retrouver les jeux de données sur le site
+
+- La logique existante ici https://github.com/opendatateam/udata/blob/master/js/components/dataset/resource/availability.vue devrait maintenant matcher.
