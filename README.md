@@ -11,20 +11,18 @@ git clone git@github.com:opendatateam/udata.git
 git clone git@github.com:etalab/udata-gouvfr.git
 ```
 
-Changer de branche dans le dépôt udata:
+Dans le dépôt udata:
 
 ```
 cd udata
-git checkout remove-theme
 npm install
 npm run build
 ```
 
-Changer de branche dans le dépôt udata-gouvfr:
+Dans le dépôt udata-gouvfr:
 
 ```
 cd udata-gouvfr
-git checkout main-theme
 npm install
 npm run build
 ```
