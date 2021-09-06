@@ -81,9 +81,9 @@ docker exec -it udata-docker-dev-env_udata_1 udata user set-admin <email>
 ## Indexation (moteur de recherche et listes)
 
 ```
-udata search index
+docker exec -it udata-docker-dev-env_udata_1 udata search index
 # il est possible de filtre par modèle
-udata search index Dataset
+docker exec -it udata-docker-dev-env_udata_1 udata search index Dataset
 ```
 
 ## Compiler les traductions
