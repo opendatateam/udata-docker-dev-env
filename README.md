@@ -57,6 +57,12 @@ docker exec -it udata-docker-dev-env_udata_1 udata cache flush
 
 ## Contenu / utilisateurs
 
+### Créer des fixtures
+
+```
+docker exec -it udata-docker-dev-env_udata_1 generate-fixtures
+```
+
 ### Créer un admin
 
 ```
@@ -72,6 +78,13 @@ docker exec -it udata-docker-dev-env_udata_1 udata user set-admin <email>
 - aller sur la page d'une réutilisation en admin et cliquer sur "Mis en avant"
 - flusher le cache si besoin
 
+## Indexation (moteur de recherche et listes)
+
+```
+docker exec -it udata-docker-dev-env_udata_1 udata search index
+# il est possible de filtre par modèle
+docker exec -it udata-docker-dev-env_udata_1 udata search index Dataset
+```
 
 ## Compiler les traductions
 
