@@ -1,6 +1,6 @@
 FROM udata/system
 
-RUN mkdir -p /srv/udata /srv/udata-gouvfr
+RUN mkdir -p /srv/udata /srv/udata-front
 ADD start.sh /srv/start.sh
 ADD udata.cfg /srv/udata.cfg
 RUN chmod +x /srv/start.sh

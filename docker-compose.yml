@@ -31,7 +31,7 @@ services:
       - elasticsearch:elasticsearch
     volumes:
       - ./udata:/srv/udata
-      - ./udata-gouvfr:/srv/udata-gouvfr
+      - ./udata-front:/srv/udata-front
       - udata-fs:/udata/fs
     ports:
       - "7000:7000"
